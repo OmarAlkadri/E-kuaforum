@@ -1,3 +1,12 @@
 <resources>
-    <string name="app_name">E-kuaforum</string>
+    <string name="app_name">My_Graduation_Project</string>
+    <string name="login_email_hint">Email</string>
+    <string name="login_password_hint">Password</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="next_btn">Next</string>
+    <string name="resend_">RESEND APP</string>
+    <string name="didn_t_receive_the_app">Didn\'t receive the app?</string>
+    <string name="password_updated">Passowrd Updated</string>
+    <string name="done">Done</string>
 </resources>
