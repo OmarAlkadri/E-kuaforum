@@ -9,4 +9,14 @@
     <string name="didn_t_receive_the_app">Didn\'t receive the app?</string>
     <string name="password_updated">Passowrd Updated</string>
     <string name="done">Done</string>
+
+
+
+
+
+    <string-array name="planets_array">
+        <item >Erkek</item>
+        <item >Kadın</item>
+    </string-array>
+
 </resources>

@@ -51,13 +51,14 @@
                 android:id="@+id/recycler_view_story"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="5dp" />
+                android:orientation="horizontal"
+                android:layout_margin="5dp"/>
 
             <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_view_posts"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:id="@+id/recycler_view_posts"/>
+                android:layout_margin="5dp"/>
 
         </LinearLayout>
 

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/login_nav"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.e_kuaforum.login.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_passwordForgotFragment"
+            app:destination="@id/passwordForgotFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_signUpFragment"
+            app:destination="@id/signUpFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_lodingFragment"
+            app:destination="@id/lodingFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_homePageFragment"
+            app:destination="@id/homePageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/password_Forgot_Type_Fragment"
+        android:name="com.example.e_kuaforum.password_forgot.Password_Forgot_Type_Fragment"
+        android:label="fragment_password__forgot__type_"
+        tools:layout="@layout/fragment_password__forgot__type_" >
+        <action
+            android:id="@+id/action_password_Forgot_Type_Fragment_to_password_Forgot_Verification_Fragment"
+            app:destination="@id/password_Forgot_Verification_Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/lodingFragment"
+        android:name="com.example.e_kuaforum.login.LodingFragment"
+        android:label="fragment_loding"
+        tools:layout="@layout/fragment_loding" />
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="com.example.e_kuaforum.sign_up.SignUpFragment"
+        android:label="fragment_sign_up"
+        tools:layout="@layout/fragment_sign_up" />
+    <fragment
+        android:id="@+id/rest_Password_Fragment"
+        android:name="com.example.e_kuaforum.password_forgot.Rest_Password_Fragment"
+        android:label="fragment_rest__password_"
+        tools:layout="@layout/fragment_rest__password_" />
+    <fragment
+        android:id="@+id/passwordForgotFragment"
+        android:name="com.example.e_kuaforum.password_forgot.PasswordForgotFragment"
+        android:label="fragment_password_forgot"
+        tools:layout="@layout/fragment_password_forgot" >
+        <action
+            android:id="@+id/action_passwordForgotFragment_to_password_Forgot_Type_Fragment"
+            app:destination="@id/password_Forgot_Type_Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/password_Forgot_Verification_Fragment"
+        android:name="com.example.e_kuaforum.password_forgot.Password_Forgot_Verification_Fragment"
+        android:label="fragment_password__forgot__verification_"
+        tools:layout="@layout/fragment_password__forgot__verification_" >
+        <action
+            android:id="@+id/action_password_Forgot_Verification_Fragment_to_rest_Password_Fragment"
+            app:destination="@id/rest_Password_Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/homePageFragment"
+        android:name="com.example.e_kuaforum.homepage.HomePageFragment"
+        android:label="fragment_home_page"
+        tools:layout="@layout/fragment_home_page" />
+</navigation>

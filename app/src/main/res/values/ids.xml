@@ -2,4 +2,5 @@
 <resources>
     <item name="layoutEmail" type="id" />
     <item name="TextPassword" type="id" />
+    <item name="forgotPasswordBtn" type="id"/>
 </resources>

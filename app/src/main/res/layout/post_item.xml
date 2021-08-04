@@ -11,7 +11,8 @@
         android:layout_alignParentEnd="true"
         android:src="@drawable/ic_more"
         android:id="@+id/more"
-        android:layout_margin="15dp"/>
+        android:layout_margin="15dp"
+        android:layout_alignParentRight="true" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -83,7 +84,9 @@
                 android:id="@+id/comment"
                 android:src="@drawable/ic_comment"
                 android:layout_toEndOf="@id/like"
-                android:layout_marginStart="10dp"/>
+                android:layout_marginStart="10dp"
+                android:layout_toRightOf="@id/like"
+                android:layout_marginLeft="10dp" />
         </RelativeLayout>
 
         <TextView
@@ -92,7 +95,8 @@
             android:layout_marginStart="8dp"
             android:textColor="@color/colorPrimaryDark"
             android:textStyle="bold"
-            android:id="@+id/likes"/>
+            android:id="@+id/likes"
+            android:layout_marginLeft="8dp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -100,14 +104,16 @@
             android:layout_marginStart="8dp"
             android:textColor="@color/colorPrimaryDark"
             android:textStyle="bold"
-            android:id="@+id/publisher"/>
+            android:id="@+id/publisher"
+            android:layout_marginLeft="8dp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:textColor="@color/colorPrimaryDark"
-            android:id="@+id/description"/>
+            android:id="@+id/description"
+            android:layout_marginLeft="8dp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -117,7 +123,8 @@
             android:layout_marginTop="5dp"
             android:textColor="@color/colorAccent"
             android:id="@+id/comments"
-            android:layout_marginBottom="10dp"/>
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="8dp" />
 
     </LinearLayout>
 

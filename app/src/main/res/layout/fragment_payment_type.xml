@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".password_forgot.Password_Forgot_Type_Fragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".payment_page.Payment_Type_Fragment">
 
     <ScrollView
         android:id="@+id/password_forgot"
@@ -17,26 +18,31 @@
             android:orientation="vertical">
 
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Forget passd"
-                android:textColor="@color/black"
-                android:textSize="30dp"
-                android:textAllCaps="true"
-                android:layout_marginTop="10dp"/>
+            <androidx.constraintlayout.utils.widget.ImageFilterView
+                android:id="@+id/imageFilterView"
+                android:layout_width="143dp"
+                android:layout_height="128dp"
+                android:layout_marginStart="90dp"
+                android:layout_marginTop="50dp"
+                android:src="@drawable/app"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginLeft="100dp" />
 
-            <!--android:fontFamily="@font/muli"-->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="112dp"
                 android:text="Forget pass"
                 android:textColor="@color/black"
-                android:textSize="18dp"/>
+                android:textSize="18dp"
+                android:layout_marginLeft="125dp" />
+
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
-                android:layout_marginTop="75dp"
+                android:layout_marginTop="50dp"
                 android:background="@drawable/ic_side_bg"
                 android:padding="10dp">
 
@@ -54,22 +60,13 @@
                     android:id="@+id/mobile_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Forget pass"
+                    android:text="bankla"
                     android:textColor="@color/black"
                     android:textSize="25dp"
                     android:layout_toRightOf="@+id/mobile_icon"
-                    android:layout_marginTop="30dp"/>
+                    android:layout_marginTop="45dp"/>
 
-                <!--android:fontFamily="@font/muli"-->
-                <TextView
-                    android:id="@+id/mobile_des"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="+90586918961"
-                    android:textColor="@color/black"
-                    android:textSize="25dp"
-                    android:layout_toRightOf="@+id/mobile_icon"
-                    android:layout_below="@+id/mobile_title"/>
+
                 <Button
                     android:id="@+id/phone_btn"
                     android:layout_width="match_parent"
@@ -80,8 +77,7 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
-                android:layout_marginTop="75dp"
-
+                android:layout_marginTop="50dp"
                 android:background="@drawable/ic_side_bg"
                 android:padding="10dp">
 
@@ -99,22 +95,12 @@
                     android:id="@+id/maill_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Forget pass"
+                    android:text="el le"
                     android:textColor="@color/black"
                     android:textSize="25dp"
                     android:layout_toRightOf="@+id/maill_icon"
-                    android:layout_marginTop="30dp"/>
+                    android:layout_marginTop="45dp"/>
 
-                <!--android:fontFamily="@font/muli"-->
-                <TextView
-                    android:id="@+id/maill_des"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="+90586918961"
-                    android:textColor="@color/black"
-                    android:textSize="25dp"
-                    android:layout_toRightOf="@+id/maill_icon"
-                    android:layout_below="@+id/maill_title"/>
 
                 <Button
                     android:id="@+id/maill_btn"
@@ -126,5 +112,4 @@
         </LinearLayout>
     </ScrollView>
 
-
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
