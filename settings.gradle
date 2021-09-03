@@ -1,0 +1,2 @@
+rootProject.name = "E-kuaforum"
+include ':app'
