@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/payment_nav"
+    app:startDestination="@id/payment_Type_Fragment2">
+
+    <fragment
+        android:id="@+id/payment_Type_Fragment2"
+        android:name="com.example.e_kuaforum.payment_page.Payment_Type_Fragment"
+        android:label="Payment_Type_Fragment"
+        tools:layout="@layout/fragment_payment_type"  >
+        <action
+            android:id="@+id/action_payment_Type_Fragment2_to_paymentFragment"
+            app:destination="@id/paymentFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/paymentFragment"
+        android:name="com.example.e_kuaforum.payment_page.PaymentFragment"
+        android:label="fragment_payment_atm"
+        tools:layout="@layout/fragment_payment_atm" />
+
+</navigation>

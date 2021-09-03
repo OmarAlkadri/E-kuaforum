@@ -24,6 +24,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
                 android:layout_marginTop="30dp"
                 android:orientation="vertical"
                 android:padding="20dp">
@@ -35,8 +36,8 @@
                     <TextView
                         style="@style/viewParent.headerText.NoMode"
                         android:layout_alignParentLeft="true"
-                        android:layout_marginLeft="5dp"
                         android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dp"
                         android:text="Here’s\nyour first\nstep with \nus! "
                         android:textColor="@color/whiteTextColor" />
 
@@ -51,12 +52,12 @@
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
-                    android:layout_marginEnd="20dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginRight="20dp"
                     app:cardBackgroundColor="@color/whiteTextColor"
-                    app:cardCornerRadius="15dp"
-                    android:layout_marginRight="20dp">
+                    app:cardCornerRadius="15dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -75,7 +76,21 @@
                                 android:hint="Name"
                                 android:inputType="textPersonName"
                                 android:maxLines="1"
-                                tools:ignore="SpeakableTextPresentCheck" />
+                                tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/textInputName1"
+                            style="@style/parent"
+                            android:layout_marginTop="@dimen/loginViewsMargin">
+
+                            <EditText
+                                android:id="@+id/editUserName"
+                                style="@style/modifiedEditText"
+                                android:hint="user Name"
+                                android:inputType="textPersonName"
+                                android:maxLines="1"
+                                tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
                         </com.google.android.material.textfield.TextInputLayout>
 
                         <com.google.android.material.textfield.TextInputLayout
@@ -89,7 +104,7 @@
                                 android:hint="Surname"
                                 android:inputType="textPersonName"
                                 android:maxLines="1"
-                                tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+                                tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
                         </com.google.android.material.textfield.TextInputLayout>
 
                         <com.google.android.material.textfield.TextInputLayout
@@ -103,7 +118,8 @@
                                 android:hint="@string/login_email_hint"
                                 android:inputType="textEmailAddress"
                                 android:maxLines="1"
-                                tools:ignore="SpeakableTextPresentCheck" />
+                                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
                         </com.google.android.material.textfield.TextInputLayout>
 
                         <com.google.android.material.textfield.TextInputLayout
@@ -117,25 +133,28 @@
                                 android:hint="Mobile Number"
                                 android:inputType="phone"
                                 android:maxLines="1"
-                                tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+                                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
                         </com.google.android.material.textfield.TextInputLayout>
 
                         <com.google.android.material.textfield.TextInputLayout
                             android:id="@+id/dqw"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
-                            android:layout_marginTop="@dimen/loginViewsMargin">
+                            android:layout_marginTop="@dimen/loginViewsMargin"
+                            android:background="@color/white">
 
                             <AutoCompleteTextView
                                 android:id="@+id/editTextGender"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:background="@color/white"
+                                android:hapticFeedbackEnabled="false"
                                 android:hint="Gender"
-                                android:inputType="textAutoComplete"
+                                android:inputType="none"
                                 android:maxLines="1"
-                                android:textSize="12sp" />
+                                android:textSize="12sp"
+                                tools:ignore="TouchTargetSizeCheck" />
 
                         </com.google.android.material.textfield.TextInputLayout>
 
@@ -150,7 +169,7 @@
                                 android:hint="age"
                                 android:inputType="number"
                                 android:maxLines="1"
-                                tools:ignore="SpeakableTextPresentCheck" />
+                                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
                         </com.google.android.material.textfield.TextInputLayout>
 
                         <com.google.android.material.textfield.TextInputLayout
@@ -163,7 +182,8 @@
                                 style="@style/modifiedEditText"
                                 android:hint="@string/login_password_hint"
                                 android:inputType="textPassword"
-                                android:maxLines="1" />
+                                android:maxLines="1"
+                                tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,SpeakableTextPresentCheck" />
                         </com.google.android.material.textfield.TextInputLayout>
 
                         <Button
@@ -174,15 +194,15 @@
                             android:text="Register" />
 
                         <TextView
-                            android:id="@+id/btn"
+                            android:id="@+id/back_btn"
                             style="@style/parent"
                             android:layout_marginTop="@dimen/loginViewsMargin"
+                            android:gravity="center_horizontal"
                             android:text="Already have an account?"
                             android:textAlignment="center"
                             android:textColor="@color/themeColor"
                             android:textSize="17sp"
-                            android:textStyle="bold"
-                            android:gravity="center_horizontal" />
+                            android:textStyle="bold" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -204,11 +224,11 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="6"
+                        android:gravity="center_horizontal"
                         android:text="Use other Methods"
                         android:textAlignment="center"
                         android:textColor="@color/whiteTextColor"
-                        android:textSize="12sp"
-                        android:gravity="center_horizontal" />
+                        android:textSize="12sp" />
 
                     <View
                         android:layout_width="0dp"
@@ -221,7 +241,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
-                    android:layout_marginBottom="30dp"
+                    android:layout_marginBottom="45dp"
                     android:gravity="center">
 
                     <ImageView
@@ -237,7 +257,6 @@
                 </LinearLayout>
             </LinearLayout>
         </ScrollView>
-
 
 
         <ImageView

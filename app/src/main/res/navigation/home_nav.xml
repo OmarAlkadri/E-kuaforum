@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home_nav"
+    app:startDestination="@id/homePage_f">
+
+    <fragment
+        android:id="@+id/homePage_f"
+        android:name="com.example.e_kuaforum.homepage.HomePageFragment"
+        android:label="HomePageFragment"
+        tools:layout="@layout/fragment_home_page" />
+    <fragment
+        android:id="@+id/barberShow_f"
+        android:name="com.example.e_kuaforum.barbershop_show_page.BarberShowFragment"
+        android:label="BarberShowFragment"
+        tools:layout="@layout/fragment_barber_show" />
+    <fragment
+        android:id="@+id/reservation_f"
+        android:name="com.example.e_kuaforum.rendezvous_page.RendezvousFragment"
+        android:label="RendezvousFragment"
+        tools:layout="@layout/fragment_rendezvous">
+
+        <argument
+            android:name="UserId"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <action
+            android:id="@+id/action_reservation_f_to_payment_Type_Fragment"
+            app:destination="@id/payment_Type_Fragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/payment_Type_Fragment"
+        android:name="com.example.e_kuaforum.payment_page.Payment_Type_Fragment"
+        android:label="Payment_Type_Fragment"
+        tools:layout="@layout/fragment_payment_type"/>
+
+</navigation>

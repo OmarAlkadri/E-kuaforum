@@ -1,60 +1,116 @@
 package com.example.e_kuaforum.homepage
 
+import android.app.AlertDialog
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.android.volley.Request
+import com.android.volley.Response
+import com.android.volley.VolleyError
+import com.android.volley.toolbox.JsonArrayRequest
+import com.android.volley.toolbox.Volley
+import com.example.e_kuaforum.Models.NukeSSLCerts
 import com.example.e_kuaforum.R
+import com.example.e_kuaforum.databinding.FragmentHomePageBinding
+import kotlinx.android.synthetic.main.coment_page_dialog.view.*
+import kotlinx.android.synthetic.main.fragment_home_page.*
+import org.json.JSONArray
+import org.json.JSONException
+import org.json.JSONObject
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [HomePageFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class HomePageFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+
+    lateinit var Binding : FragmentHomePageBinding
+    private var layoutManager : RecyclerView.LayoutManager? = null
+    private var adapter : RecyclerView.Adapter<RecyclerAtapter.ViewHolder>? = null
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
+        var a = NukeSSLCerts()
+        a.nuke()
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home_page, container, false)
+        Binding = DataBindingUtil.inflate(inflater, R.layout.fragment_home_page, container, false)
+
+        layoutManager = LinearLayoutManager(context)
+        Binding.recyclerViewPosts.layoutManager = layoutManager
+        getJson()
+
+        return Binding.root
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment HomePageFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            HomePageFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+
+
+    fun getJson(){
+
+        val url = "https://10.0.2.2:44307/api/EntityPosts"
+        var Jo: JSONObject
+        var PostId: Int = 0
+        lateinit var PostText: String
+        lateinit var PostTime: String
+        lateinit var BarberName: String
+        lateinit var ImgVideoUrl: String
+        lateinit var comment: JSONArray
+        var likes: Int = 0
+        val PostItems = ArrayList<Post>()
+
+        val jsonObjectRequest = JsonArrayRequest(
+            Request.Method.GET, url, null,
+            Response.Listener { response ->
+                for (i in 1..response.length()) {
+                    try {
+                        if(response.length()>0) {
+                            Jo = response.getJSONObject(i - 1)
+
+                            PostId = Jo.getInt("entityPostId")
+
+                            if (Jo.getString("entityPostText").length > 0)
+                                PostText = Jo.getString("entityPostText")
+                            else
+                                PostText = "null"
+                            if (Jo.getString("entityPostTime").length > 0)
+                                PostTime = Jo.getString("entityPostTime")
+                            else
+                                PostTime = "null"
+                            if (Jo.getString("entityImgVideoUrl").length > 0)
+                                ImgVideoUrl = Jo.getString("entityImgVideoUrl")
+                            else
+                                ImgVideoUrl = "null"
+                            if (Jo.getJSONObject("barber").length() > 0)
+                                BarberName = Jo.getJSONObject("barber").getString("name")
+                            else
+                                BarberName = "null"
+
+                                comment = Jo.getJSONArray("commentModels")
+
+
+                            likes = Jo.getInt("likes")
+                        }
+                    } catch (e: JSONException) {
+                        e.printStackTrace()
+                    } catch (e: VolleyError) {
+                        e.printStackTrace()
+                    }
+                    PostItems.add(Post(PostId,PostText,PostTime,BarberName,ImgVideoUrl,comment,likes))
                 }
+                adapter = RecyclerAtapter(PostItems)
+                Binding.recyclerViewPosts.adapter = adapter
+                adapter?.notifyDataSetChanged()
+            },
+            Response.ErrorListener { error: VolleyError? ->
+                println("Response: %s".format(error))
             }
+        )
+        Volley.newRequestQueue(getActivity()?.getApplicationContext()).add(jsonObjectRequest)
     }
 }

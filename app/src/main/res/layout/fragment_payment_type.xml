@@ -1,115 +1,124 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".payment_page.Payment_Type_Fragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <ScrollView
-        android:id="@+id/password_forgot"
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="30dp">
+        tools:context=".payment_page.Payment_Type_Fragment">
 
-        <LinearLayout
+        <ScrollView
+            android:id="@+id/password_forgot"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_height="match_parent"
+            android:padding="30dp">
 
-
-            <androidx.constraintlayout.utils.widget.ImageFilterView
-                android:id="@+id/imageFilterView"
-                android:layout_width="143dp"
-                android:layout_height="128dp"
-                android:layout_marginStart="90dp"
-                android:layout_marginTop="50dp"
-                android:src="@drawable/app"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:layout_marginLeft="100dp" />
-
-            <TextView
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="112dp"
-                android:text="Forget pass"
-                android:textColor="@color/black"
-                android:textSize="18dp"
-                android:layout_marginLeft="125dp" />
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:layout_marginTop="50dp"
-                android:background="@drawable/ic_side_bg"
-                android:padding="10dp">
+                android:orientation="vertical">
 
 
-                <ImageView
-                    android:id="@+id/mobile_icon"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:src="@drawable/mobile_custom_icon"
-                    android:layout_centerVertical="true"
-                    android:layout_marginRight="20dp"/>
+                <androidx.constraintlayout.utils.widget.ImageFilterView
+                    android:id="@+id/imageFilterView"
+                    android:layout_width="143dp"
+                    android:layout_height="128dp"
+                    android:layout_marginStart="90dp"
+                    android:layout_marginTop="50dp"
+                    android:src="@drawable/app"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginLeft="100dp" />
 
-                <!--android:fontFamily="@font/muli"-->
                 <TextView
-                    android:id="@+id/mobile_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="bankla"
+                    android:layout_marginStart="112dp"
+                    android:text="Forget pass"
                     android:textColor="@color/black"
-                    android:textSize="25dp"
-                    android:layout_toRightOf="@+id/mobile_icon"
-                    android:layout_marginTop="45dp"/>
+                    android:textSize="18dp"
+                    android:layout_marginLeft="125dp" />
 
-
-                <Button
-                    android:id="@+id/phone_btn"
+                <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@android:color/transparent" />
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:layout_marginTop="50dp"
-                android:background="@drawable/ic_side_bg"
-                android:padding="10dp">
+                    android:layout_height="150dp"
+                    android:layout_marginTop="50dp"
+                    android:background="@drawable/ic_side_bg"
+                    android:padding="10dp">
 
 
-                <ImageView
-                    android:id="@+id/maill_icon"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:src="@drawable/maill_custom_icon"
-                    android:layout_centerVertical="true"
-                    android:layout_marginRight="20dp"/>
+                    <ImageView
+                        android:id="@+id/mobile_icon"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:src="@drawable/mobile_custom_icon"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="20dp" />
 
-                <!--android:fontFamily="@font/muli"-->
-                <TextView
-                    android:id="@+id/maill_title"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="el le"
-                    android:textColor="@color/black"
-                    android:textSize="25dp"
-                    android:layout_toRightOf="@+id/maill_icon"
-                    android:layout_marginTop="45dp"/>
+                    <!--android:fontFamily="@font/muli"-->
+                    <TextView
+                        android:id="@+id/mobile_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="bankla"
+                        android:textColor="@color/black"
+                        android:textSize="25dp"
+                        android:layout_toRightOf="@+id/mobile_icon"
+                        android:layout_marginTop="45dp" />
 
 
-                <Button
-                    android:id="@+id/maill_btn"
+                    <Button
+                        android:id="@+id/bankla_btn"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@android:color/transparent"
+                        tools:ignore="SpeakableTextPresentCheck" />
+                </RelativeLayout>
+
+                <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@android:color/transparent" />
-            </RelativeLayout>
+                    android:layout_height="150dp"
+                    android:layout_marginTop="50dp"
+                    android:background="@drawable/ic_side_bg"
+                    android:padding="10dp">
 
-        </LinearLayout>
-    </ScrollView>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+                    <ImageView
+                        android:id="@+id/maill_icon"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:src="@drawable/maill_custom_icon"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="20dp" />
+
+
+                    <TextView
+                        android:id="@+id/maill_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="el le"
+                        android:textColor="@color/black"
+                        android:textSize="25dp"
+                        android:layout_toRightOf="@+id/maill_icon"
+                        android:layout_marginTop="45dp" />
+
+
+                    <Button
+                        android:id="@+id/elle_btn"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@android:color/transparent"
+                        tools:ignore="SpeakableTextPresentCheck" />
+                </RelativeLayout>
+
+            </LinearLayout>
+        </ScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -5,56 +5,97 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
+import androidx.databinding.DataBindingUtil.inflate
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.android.volley.Request
+import com.android.volley.Response
+import com.android.volley.VolleyError
+import com.android.volley.toolbox.JsonArrayRequest
+import com.android.volley.toolbox.Volley
+import com.example.e_kuaforum.Models.Barber_Singleton
+import com.example.e_kuaforum.Models.NukeSSLCerts
 import com.example.e_kuaforum.R
+import com.example.e_kuaforum.databinding.FragmentBarberShowBinding
+import org.json.JSONException
+import org.json.JSONObject
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [BarberShowFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class BarberShowFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
+    lateinit var Binding: FragmentBarberShowBinding
+    private var layoutManager : RecyclerView.LayoutManager? = null
+    private var adapter : RecyclerView.Adapter<RecyclerAtapter.ViewHolder>? = null
+    lateinit var BarberShowItems : ArrayList<barberShop>
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
+        var a = NukeSSLCerts()
+        a.nuke()
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_barber_show, container, false)
-    }
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment BarberShowFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            BarberShowFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+      Binding = inflate(inflater, R.layout.fragment_barber_show, container, false)
+
+
+
+        layoutManager = LinearLayoutManager(context)
+        Binding.recyclerViewBarber.layoutManager = layoutManager
+        JsonToAdapter()
+
+
+        return Binding.root
+    }
+    fun JsonToAdapter(){
+        val url = "https://10.0.2.2:44307/api/Barbers"
+
+        lateinit var Jo: JSONObject
+        lateinit var BarberShowName:String
+        lateinit var BarberImg:String
+        lateinit var contactInfo:String
+        lateinit var WorkingHours:String
+        BarberShowItems = ArrayList<barberShop>()
+
+        val jsonObjectRequest = JsonArrayRequest(
+            Request.Method.GET, url, null,
+            Response.Listener { response ->
+                for (i in 1..response.length()) {
+                    try {
+                        Jo = response.getJSONObject(i - 1)
+
+                        if (Jo.getString("barberShowName").length > 0) {
+                            BarberShowName = Jo.getString("barberShowName")
+                            if(Barber_Singleton.getInstance().getBarberName()!=null)
+                            Barber_Singleton.getInstance().setBarberName(BarberShowName)
+                        }
+                        else
+                            BarberShowName = "null"
+
+                        if (Jo.getString("barberImg").length > 0)
+                            BarberImg = Jo.getString("barberImg")
+                        else
+                            BarberImg = "null"
+
+                        if (Jo.getString("openingTime").length > 0&&Jo.getString("closingTime").length > 0)
+                            WorkingHours = Jo.getInt("openingTime").toString() +" - " + Jo.getInt("closingTime").toString()
+                        if (Jo.getJSONObject("contactInfoModel").getString("adres").length > 0)
+                            contactInfo = Jo.getJSONObject("contactInfoModel").getString("adres")
+
+                    } catch (e: JSONException) {
+                        e.printStackTrace()
+                    } catch (e: VolleyError) {
+                        e.printStackTrace()
+                    }
+                    BarberShowItems.add(barberShop(BarberShowName,contactInfo,WorkingHours,BarberImg))
                 }
+                adapter = RecyclerAtapter(BarberShowItems)
+                Binding.recyclerViewBarber.adapter = adapter
+                adapter?.notifyDataSetChanged()
+            },
+            Response.ErrorListener { error: VolleyError? ->
+                println("Response: %s".format(error))
             }
+        )
+        Volley.newRequestQueue(getActivity()?.getApplicationContext()).add(jsonObjectRequest)
     }
 }

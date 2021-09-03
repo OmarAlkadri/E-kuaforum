@@ -3,10 +3,41 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/OMAR/final/E-kuaforum/app/src/main/res/drawable/dontextview.xml" value="0.22763157894736843" />
+        <entry key="..\:/Users/OMAR/final/E-kuaforum/app/src/main/res/drawable/ic_baseline_settings_24.xml" value="0.22467532467532467" />
+        <entry key="..\:/Users/OMAR/final/E-kuaforum/app/src/main/res/layout/_menu.xml" value="0.10964912280701754" />
+        <entry key="..\:/Users/OMAR/final/E-kuaforum/app/src/main/res/layout/activity_home_page.xml" value="0.176" />
+        <entry key="..\:/Users/OMAR/final/E-kuaforum/app/src/main/res/layout/activity_login.xml" value="0.4" />
         <entry key="..\:/Users/OMAR/final/E-kuaforum/app/src/main/res/layout/activity_main.xml" value="0.10964912280701754" />
+        <entry key="..\:/Users/OMAR/final/E-kuaforum/app/src/main/res/layout/activity_payment.xml" value="0.21403508771929824" />
+        <entry key="..\:/Users/OMAR/final/E-kuaforum/app/src/main/res/layout/activity_sign_up.xml" value="0.21403508771929824" />
+        <entry key="..\:/Users/OMAR/final/E-kuaforum/app/src/main/res/layout/add_comment_dialog.xml" value="0.2" />
+        <entry key="..\:/Users/OMAR/final/E-kuaforum/app/src/main/res/layout/barber_show_item.xml" value="0.536" />
+        <entry key="..\:/Users/OMAR/final/E-kuaforum/app/src/main/res/layout/coment_item.xml" value="0.38155515370705245" />
+        <entry key="..\:/Users/OMAR/final/E-kuaforum/app/src/main/res/layout/coment_page_dialog.xml" value="0.136" />
+        <entry key="..\:/Users/OMAR/final/E-kuaforum/app/src/main/res/layout/fragment_add_comment.xml" value="0.176" />
+        <entry key="..\:/Users/OMAR/final/E-kuaforum/app/src/main/res/layout/fragment_barber_show.xml" value="0.2" />
+        <entry key="..\:/Users/OMAR/final/E-kuaforum/app/src/main/res/layout/fragment_coment_page.xml" value="0.11096491228070175" />
+        <entry key="..\:/Users/OMAR/final/E-kuaforum/app/src/main/res/layout/fragment_home_page.xml" value="0.21403508771929824" />
+        <entry key="..\:/Users/OMAR/final/E-kuaforum/app/src/main/res/layout/fragment_loding.xml" value="0.18425925925925926" />
         <entry key="..\:/Users/OMAR/final/E-kuaforum/app/src/main/res/layout/fragment_login.xml" value="0.19907407407407407" />
+        <entry key="..\:/Users/OMAR/final/E-kuaforum/app/src/main/res/layout/fragment_new_rendezvous.xml" value="0.21403508771929824" />
+        <entry key="..\:/Users/OMAR/final/E-kuaforum/app/src/main/res/layout/fragment_password__forgot__type_.xml" value="0.21403508771929824" />
+        <entry key="..\:/Users/OMAR/final/E-kuaforum/app/src/main/res/layout/fragment_password__forgot__verification_.xml" value="0.10964912280701754" />
+        <entry key="..\:/Users/OMAR/final/E-kuaforum/app/src/main/res/layout/fragment_password_forgot.xml" value="0.21403508771929824" />
         <entry key="..\:/Users/OMAR/final/E-kuaforum/app/src/main/res/layout/fragment_payment_atm.xml" value="0.10964912280701754" />
-        <entry key="..\:/Users/OMAR/final/E-kuaforum/app/src/main/res/layout/fragment_sign_up.xml" value="0.21403508771929824" />
+        <entry key="..\:/Users/OMAR/final/E-kuaforum/app/src/main/res/layout/fragment_payment_type.xml" value="0.21403508771929824" />
+        <entry key="..\:/Users/OMAR/final/E-kuaforum/app/src/main/res/layout/fragment_rendezvous.xml" value="0.2" />
+        <entry key="..\:/Users/OMAR/final/E-kuaforum/app/src/main/res/layout/fragment_sign_up.xml" value="0.264" />
+        <entry key="..\:/Users/OMAR/final/E-kuaforum/app/src/main/res/layout/gender_menu.xml" value="0.21403508771929824" />
+        <entry key="..\:/Users/OMAR/final/E-kuaforum/app/src/main/res/layout/more_page.xml" value="0.4" />
+        <entry key="..\:/Users/OMAR/final/E-kuaforum/app/src/main/res/layout/post_item.xml" value="0.20115606936416186" />
+        <entry key="..\:/Users/OMAR/final/E-kuaforum/app/src/main/res/layout/rendezvou_dialog.xml" value="0.264" />
+        <entry key="..\:/Users/OMAR/final/E-kuaforum/app/src/main/res/layout/rendezvou_item.xml" value="0.264" />
+        <entry key="..\:/Users/OMAR/final/E-kuaforum/app/src/main/res/layout/rendezvous_item.xml" value="0.4" />
+        <entry key="..\:/Users/OMAR/final/E-kuaforum/app/src/main/res/layout/story_item.xml" value="0.3913392141138733" />
+        <entry key="..\:/Users/OMAR/final/E-kuaforum/app/src/main/res/menu/bottom_nav_menu.xml" value="0.21125541125541125" />
+        <entry key="..\:/Users/OMAR/final/E-kuaforum/app/src/main/res/menu/home_bottom_nav_menu.xml" value="0.18796296296296297" />
       </map>
     </option>
   </component>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/registration_nav"
+    app:startDestination="@id/signUpFragment">
+
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="com.example.e_kuaforum.sign_up.SignUpFragment"
+        android:label="SignUpFragment"
+        tools:layout="@layout/fragment_sign_up" >
+        <action
+            android:id="@+id/action_signUpFragment_to_lodingFragment"
+            app:destination="@id/lodingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/lodingFragment"
+        android:name="com.example.e_kuaforum.login.LodingFragment"
+        android:label="fragment_loding"
+        tools:layout="@layout/fragment_loding" >
+        <action
+            android:id="@+id/action_lodingFragment_to_homePageFragment2"
+            app:destination="@id/homePageFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/homePageFragment2"
+        android:name="com.example.e_kuaforum.homepage.HomePageFragment"
+        android:label="fragment_home_page"
+        tools:layout="@layout/fragment_home_page" />
+</navigation>

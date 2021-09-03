@@ -19,9 +19,6 @@
         <action
             android:id="@+id/action_loginFragment_to_lodingFragment"
             app:destination="@id/lodingFragment" />
-        <action
-            android:id="@+id/action_loginFragment_to_homePageFragment"
-            app:destination="@id/homePageFragment" />
     </fragment>
     <fragment
         android:id="@+id/password_Forgot_Type_Fragment"
@@ -36,7 +33,11 @@
         android:id="@+id/lodingFragment"
         android:name="com.example.e_kuaforum.login.LodingFragment"
         android:label="fragment_loding"
-        tools:layout="@layout/fragment_loding" />
+        tools:layout="@layout/fragment_loding" >
+        <action
+            android:id="@+id/action_lodingFragment_to_homePageFragment"
+            app:destination="@id/homePageFragment" />
+    </fragment>
     <fragment
         android:id="@+id/signUpFragment"
         android:name="com.example.e_kuaforum.sign_up.SignUpFragment"
