@@ -204,7 +204,9 @@ class RendezvousFragment : Fragment() {
         lateinit var BarberShowName:String
         lateinit var BarberImg:String
         var contactInfo:String = "bhj "
-        lateinit var reservationTime:String
+        var day = 0
+        var hour = 0
+        var min = 0
         Reservation = ArrayList<ReservationShow>()
         var paid:Int = 0
         layoutManager = LinearLayoutManager(getActivity()?.getApplicationContext())
@@ -225,10 +227,11 @@ class RendezvousFragment : Fragment() {
                             BarberImg = Jo.getString("barberImg")
                         else
                             BarberImg = "null"
-                        if (Jo.getString("times").length > 0)
-                            reservationTime = Jo.getString("times")
-                        else
-                            reservationTime = "null"
+
+                        day = Jo.getInt("day")
+                        hour = Jo.getInt("hour")
+                        min = Jo.getInt("min")
+
                         if (Jo.getJSONObject("payingOffModel").getInt("paid") > 0)
                             paid = Jo.getJSONObject("payingOffModel").getInt("paid")
                         if (Jo.getJSONObject("contactInfoModel").getString("adres").length > 0)
@@ -238,7 +241,7 @@ class RendezvousFragment : Fragment() {
                     } catch (e: VolleyError) {
                         e.printStackTrace()
                     }
-                    Reservation.add(ReservationShow(BarberShowName,contactInfo,BarberImg,reservationTime,paid))
+                    Reservation.add(ReservationShow(BarberShowName,contactInfo,BarberImg,day,hour.toString(),min.toString(),paid))
                 }
 
                 adapter = RecyclerAtapter(Reservation)
@@ -353,7 +356,7 @@ class RendezvousFragment : Fragment() {
                                                         hour_.add(hours[i] as Int)
                                                         if(Jo.getInt("min") == 1)
                                                             dk_.add(2)
-                                                        else
+                                                        else if (Jo.getInt("min") == 2)
                                                             dk_.add(1)
                                                     }
                                                 }

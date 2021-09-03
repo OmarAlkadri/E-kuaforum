@@ -50,12 +50,7 @@ class LoginFragment : Fragment() {
 
         binding.logInBtn.setOnClickListener{
            Toast.makeText(getActivity(), "giris yapildi.", Toast.LENGTH_SHORT).show()
-           // LogIn()
-
-            val intent = Intent(getActivity(), HomePage::class.java)
-            User_Singleton.getInstance().setUserId(1)
-            startActivity(intent)
-
+            LogIn()
         }
 
         binding.forgotPasswordBtn.setOnClickListener {

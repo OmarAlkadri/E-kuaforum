@@ -52,11 +52,11 @@ class RecyclerAtapter(title:ArrayList<Post>):RecyclerView.Adapter<RecyclerAtapte
 
         holder.commentImg.setOnClickListener {
             Dialog(postItems[position].getComment())
-
             mDialogView.button2.setOnClickListener {
                 if(mDialogView.CommentText.text.toString() != "" && mDialogView.CommentText.text.toString() != " ")
-                addComment(context,postItems[position].getPostId(),mDialogView.CommentText.text.toString())
+                    addComment(context,postItems[position].getPostId(),mDialogView.CommentText.text.toString())
             }
+
         }
     }
 
@@ -73,6 +73,10 @@ class RecyclerAtapter(title:ArrayList<Post>):RecyclerView.Adapter<RecyclerAtapte
 
 
 
+
+        mDialogView.goBack.setOnClickListener {
+            mAlertDialog.dismiss()
+        }
 
         adapter = Comment_RecyclerAtapter(array)
         mDialogView.commentsrecy.adapter = adapter
